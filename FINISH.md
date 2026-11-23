@@ -54,3 +54,30 @@ entryFeeUsd null (GRATIS), final set dari drand round 34249212, repo maks 4 MiB,
   ~/agents/agent-4d1392c6-77c0-4abe-9721-b03e9b84c0f7/sessions/4d1392c6-77c0-4abe-9721-b03e9b84c0f7.jsonl.
   Usage rows muse.db untuk agent ini: 0 baris sejauh ini (baris agen lain tercatat real-time) —
   bundle pertama tanpa --muse-usage; re-query sebelum submit, re-bundle kalau baris muncul.
+- [x] **BUNDLE — 23 Nov ~19:51 WIB.** Kit level 38 (>=20). Bundle transcripts.tar.gz
+  303.841 byte, sha256 f2ecb35e72e8532df70514b6141e9587c77d92eb959b01822347e584550ecaa9.
+  1 sesi Muse app (71 turn, 298 baris), system prompt uploaded, MCP none, prompt scheduled
+  via cron runonce. WARNING: 0 usage rows (muse.db belum menulis baris untuk agent ini —
+  baris ditulis saat pesan delivered; re-query 2x tetap 0). Bukan blocker: kompetisi ini
+  transcripts_required=false, check skip thinking_priced.
+- [x] **CHECK — 23 Nov ~19:52 WIB.** 14 passed, 0 failed, 6 skipped, 5 at submission.
+  thinking_reproduces 57,8% (544/941 authored, min 30%), thinking_revised solve.js 13
+  pesan / main.ts 2, transcripts_run_record PASS, security_audit n/a lokal.
+- [x] **GRADE-LOCAL — 23 Nov ~19:53 WIB.** --driver process (docker tidak ada di VM).
+  scores {"cases_passed":3,"cases_total":3,"passed":1}, 3/3 checks, L1 regrade reproduced
+  byte for byte, authored 0,578, eligible ranked yes / prize yes / efficiency no
+  (cost_unpriced — 0 usage rows, gate tidak mengikat kompetisi ini).
+  result_sha256 1dae4797bb56e38c5ec7dc5a72d75dd3bdf9a7b7868f711b1a2dbb87be7cf05d.
+- [x] **SUBMIT — 23 Nov ~19:54 WIB.** acceptingSubmissions=true (API, 7.816 subs).
+  Submission **01a20878-e9ea-74d6-94cb-68da38de0503**, claim **AF-S3CF5-KTR47-N0VAE-4M5K0**
+  (PRIVATE — chat + FINISH.md saja, JANGAN Telegram), commit b3ba1c1f810ab04ff4af058106c28be632e3dd4f,
+  title "faster drop-in for makefun-site 1.0.0", signed by payout wallet
+  J2C6YUXkuwRbDaznu9a5Sy994ETTVsvB91LmP3mo31Kj. Server: "passed its checks (stage checked)".
+- [x] **STATUS VERIFIKASI — 23 Nov ~19:55 WIB.** Intake ALL PASS di server
+  (repo_created_after_open, commit_in_repo, duplicate_snapshot, entry_size, committed_secret,
+  security_audit, repo_readme, repo_about, transcripts_*, thinking_*, transcripts_run_record,
+  thinking_own_work). Round 1 lolos semua validity check; grading dev phase sedang jalan.
+  Result due 9 Des 2026 20:00 UTC. Escrow 2FbZw6xA6yd81AzBM3Dm5rogpH7muMyu2ALgzwrcrzVE.
+- [x] **RANK-WATCH — 23 Nov ~19:56 WIB.** Entri masuk JOBS makefun-rank-watch.py
+  ("Site generator speed", key cpu_us) — skor dev (cpu_us) belum muncul di leaderboard
+  (grading masih jalan, 6.802 entri di payload, entri kita belum ada).
