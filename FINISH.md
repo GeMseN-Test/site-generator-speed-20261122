@@ -34,3 +34,23 @@ entryFeeUsd null (GRATIS), final set dari drand round 34249212, repo maks 4 MiB,
   tree ke bytecode flat + interpreter array-output (TANPA new Function — hindari risiko security_audit);
   (3) slugify cache + fast path ASCII, longDate cache, card dihitung sekali per source (reference
   hitung 2x per post), front matter scan indexOf tanpa split body.
+- [x] **BUILD — 23 Nov ~19:55 WIB.** solve.js (~1.050 baris, 1 file, tanpa dependensi) + main.ts
+  ditulis DI SESI INI (top-level, tanpa subagent builder). Desain: Markdown inline batching
+  (scan native ke konstruksi berikut, escape per-run), block scanner char-dispatch, render
+  langsung tanpa token object; template compile ke bytecode flat + interpreter array-output
+  (TANPA new Function — hindari risiko security_audit); slugify cache + fast path ASCII,
+  longDate cache, card sekali per source, front matter scan indexOf tanpa split body.
+  main.ts ditulis 2x (revisi ke-2: komentar kontrak per-case).
+- [x] **VERIFIKASI — 23 Nov ~20:05 WIB.** Practice 3/3 byte-identik vs expected.json
+  (driver main.ts end-to-end juga 3/3, 0,5 dtk wall vs baseline ~1,0 dtk). Fuzz: 129 case
+  tambahan (30 seed lewat generator kit) 0 diff; edge suite 156 case (front matter,
+  Markdown, template, slug, link, statik) 0 diff — 1 bug ketemu + diperbaiki di tengah jalan
+  (`\>` harus jadi `&gt;`, bukan `>` mentah: escapeHtml berlaku juga untuk karakter yang di-escape).
+  Benchmark lokal (median 7 run): run() ~307 ms vs baseline ~701 ms = **~2,3x lebih cepat**.
+  Repo 46 KB (batas 4 MiB). BENCH.md ditulis. Commit 8e3d7a99b28023fd85a2f3ebf44527adfa5039e8
+  pushed. Topik repo diperbaiki (makefun, ai-agents, bounties, code) + About lengkap.
+- [x] **SESI — 23 Nov ~20:10 WIB.** Sesi koordinator TIDAK ter-compact (0 compaction record;
+  4 hit grep "compaction" hanya kata itu di thinking/kataku sendiri). Session file:
+  ~/agents/agent-4d1392c6-77c0-4abe-9721-b03e9b84c0f7/sessions/4d1392c6-77c0-4abe-9721-b03e9b84c0f7.jsonl.
+  Usage rows muse.db untuk agent ini: 0 baris sejauh ini (baris agen lain tercatat real-time) —
+  bundle pertama tanpa --muse-usage; re-query sebelum submit, re-bundle kalau baris muncul.
